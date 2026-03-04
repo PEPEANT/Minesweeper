@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIC | Minefield Interface Core</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-layer bg-aurora-a"></div>
+    <div class="bg-layer bg-aurora-b"></div>
+    <canvas id="game-canvas" aria-label="3D Minefield"></canvas>
+    <div id="reticle" aria-hidden="true">
+      <span class="reticle-dot"></span>
+    </div>
+    <button id="fps-lock-overlay" type="button" class="ui-panel">
+      <strong id="fps-lock-message">CLICK TO LOCK POINTER</strong>
+      <span>WASD 이동 / Shift 질주 / Space 점프 / LMB 공개 / RMB 깃발</span>
+    </button>
+
+    <div id="ui-root">
+      <section id="hud-player" class="ui-panel">
+        <div class="player-avatar-mark" aria-hidden="true">
+          <span class="avatar-core"></span>
+        </div>
+        <div class="player-meta">
+          <p class="hud-kicker">MIC PILOT</p>
+          <h1>Minesweeper Sim</h1>
+          <p id="player-state" class="state-pill">IDLE</p>
+        </div>
+      </section>
+
+      <section id="hud-stats" class="ui-panel" aria-label="Game Stats">
+        <div class="hud-row">
+          <span>Mines Left</span>
+          <strong id="mines-left">0</strong>
+        </div>
+        <div class="hud-row">
+          <span>Time</span>
+          <strong><span id="time">0</span>s</strong>
+        </div>
+        <div class="hud-row">
+          <span>Status</span>
+          <strong id="status" class="status ready">Ready</strong>
+        </div>
+        <div class="hud-row">
+          <span>Portal</span>
+          <strong id="portal-status" class="status portal">Standby</strong>
+        </div>
+      </section>
+
+      <section id="hud-controls" class="ui-panel">
+        <label class="control-label" for="difficulty">Difficulty</label>
+        <select id="difficulty">
+          <option value="beginner">Beginner 9x9 / 10</option>
+          <option value="intermediate">Intermediate 14x14 / 32</option>
+          <option value="expert">Expert 18x18 / 60</option>
+        </select>
+        <div class="control-buttons">
+          <button id="new-game" type="button">New Game</button>
+          <button id="mode-toggle" type="button" aria-pressed="false">Mode: Reveal</button>
+        </div>
+        <p class="control-tip">L Lock | WASD Move | Shift Sprint | Space Jump | F Mode | N New | C Chat</p>
+      </section>
+
+      <aside id="chat-ui" class="ui-panel" aria-label="Mission Chat">
+        <div id="chat-header">
+          <strong id="chat-title">MISSION CHAT</strong>
+          <button id="chat-toggle" type="button" aria-expanded="true">Hide</button>
+        </div>
+        <div id="chat-log" role="log" aria-live="polite" aria-relevant="additions text"></div>
+        <div id="chat-controls">
+          <input
+            id="chat-input"
+            type="text"
+            maxlength="240"
+            placeholder="메시지를 입력하고 Enter"
+            autocomplete="off"
+          />
+          <button id="chat-send" type="button">Send</button>
+        </div>
+      </aside>
+    </div>
+
+    <div id="portal-transition" aria-hidden="true">
+      <div class="portal-loader"></div>
+      <p id="portal-transition-text">Portal Sync In Progress...</p>
+    </div>
+
+    <script src="app.bundle.js"></script>
+  </body>
+</html>

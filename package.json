@@ -1,0 +1,22 @@
+{
+  "name": "mic",
+  "version": "1.0.0",
+  "description": "A browser-based 3D Minesweeper made with Three.js.",
+  "main": "app.bundle.js",
+  "scripts": {
+    "build": "esbuild app.js --bundle --format=iife --global-name=Minefield3DApp --outfile=app.bundle.js --minify",
+    "start": "serve . -l 8000",
+    "test": "echo \"No tests configured\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "three": "^0.183.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.3",
+    "serve": "^14.2.5"
+  }
+}
