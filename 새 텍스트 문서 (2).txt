@@ -1,0 +1,26 @@
+좋아, 지금 기준 링크 형식은 이렇게 고정하면 됩니다.
+
+BASE
+
+https://emptines-chat-2.onrender.com
+HOST_KEY
+
+Render Environment의 HOST_CLAIM_KEY 값
+플레이어 링크:
+
+대기방: BASE/?zone=lobby&name=PLAYER
+FPS: BASE/?zone=fps&name=PLAYER
+OX: BASE/?zone=ox&name=PLAYER
+호스트 링크(비공개):
+
+대기방: BASE/?zone=lobby&name=HOST&host=1&hostKey=HOST_KEY
+FPS: BASE/?zone=fps&name=HOST&host=1&hostKey=HOST_KEY
+OX: BASE/?zone=ox&name=HOST&host=1&hostKey=HOST_KEY
+예시(베이스 적용):
+
+https://emptines-chat-2.onrender.com/?zone=lobby&name=PLAYER
+https://emptines-chat-2.onrender.com/?zone=lobby&name=HOST&host=1&hostKey=여기에키
+주의:
+
+호스트 링크는 절대 공개하지 마.
+플레이어 링크에는 host, hostKey 절대 넣지 마.
